@@ -78,6 +78,9 @@
     <Compile Include="Database\BillOfMaterials.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\Client.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Department.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AssiqnmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -165,6 +172,9 @@
   <ItemGroup>
     <Compile Include="Pages\AddEditOrder.xaml.cs">
       <DependentUpon>AddEditOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AssiqnmentPage.xaml.cs">
+      <DependentUpon>AssiqnmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

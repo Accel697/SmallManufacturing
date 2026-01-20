@@ -27,6 +27,14 @@ namespace SmallManufacturing.Database
         public long position_at_work { get; set; }
         public long department { get; set; }
         public decimal rate { get; set; }
+
+        public string fullName
+        {
+            get
+            {
+                return $"{this.last_name} {this.first_name} {this.middle_name}";
+            }
+        }
     
         public virtual Department Department1 { get; set; }
         public virtual Job Job { get; set; }

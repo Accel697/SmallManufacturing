@@ -12,26 +12,28 @@ namespace SmallManufacturing.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductionOrder
+    public partial class Client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductionOrder()
+        public Client()
         {
-            this.OrderAssignment = new HashSet<OrderAssignment>();
-            this.OrderProduct = new HashSet<OrderProduct>();
+            this.ProductionOrder = new HashSet<ProductionOrder>();
         }
     
         public long id { get; set; }
-        public long client { get; set; }
-        public System.DateTime start_date { get; set; }
-        public Nullable<System.DateTime> end_date { get; set; }
-        public long status { get; set; }
+        public string last_name { get; set; }
+        public string first_name { get; set; }
+        public string middle_name { get; set; }
+
+        public string fullName
+        {
+            get
+            {
+                return $"{this.last_name} {this.first_name} {this.middle_name}";
+            }
+        }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderAssignment> OrderAssignment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
-        public virtual OrderStatus OrderStatus { get; set; }
-        public virtual Client Client1 { get; set; }
+        public virtual ICollection<ProductionOrder> ProductionOrder { get; set; }
     }
 }

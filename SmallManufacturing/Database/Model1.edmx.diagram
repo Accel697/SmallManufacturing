@@ -37,6 +37,8 @@
         <AssociationConnector Association="manufacturingModel.FK_ProductionOrder_OrderStatus" ManuallyRouted="false" />
         <AssociationConnector Association="manufacturingModel.FK_Purchase_Supplier" ManuallyRouted="false" />
         <AssociationConnector Association="manufacturingModel.FK_PurchaseMaterial_Purchase" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="manufacturingModel.Client" Width="1.5" PointX="7.375" PointY="4.875" />
+        <AssociationConnector Association="manufacturingModel.FK_ProductionOrder_Client" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

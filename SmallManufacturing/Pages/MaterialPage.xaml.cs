@@ -27,7 +27,7 @@ namespace SmallManufacturing.Pages
 
             using (var context = new manufacturingEntities())
             {
-                var materials = context.Material.ToList();
+                var materials = context.Material.Include("Unit1").ToList();
                 LVMaterial.ItemsSource = materials;
             }
         }

@@ -35,7 +35,7 @@ namespace SmallManufacturing.Database
                 {
                     var productMaterials = context.BillOfMaterials.Where(pm => pm.product == this.id).ToList();
 
-                    var materialStrings = productMaterials.Select(pm => {string materialName = pm.Material1.title; return $"{materialName} - {pm.quantity}";}).ToList();
+                    var materialStrings = productMaterials.Select(pm => { string materialName = pm.Material1.title; return $"{materialName} - {pm.quantity}"; }).ToList();
 
                     string result = string.Join(", ", materialStrings);
 
@@ -43,7 +43,7 @@ namespace SmallManufacturing.Database
                 }
             }
         }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BillOfMaterials> BillOfMaterials { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

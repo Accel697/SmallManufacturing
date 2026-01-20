@@ -42,5 +42,6 @@ namespace SmallManufacturing.Database
         public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Unit> Unit { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
     }
 }

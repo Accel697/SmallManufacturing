@@ -48,7 +48,7 @@ namespace SmallManufacturing.Database
                     {
                         var orderProducts = context.OrderProduct.Where(op => op.product == productMaterial.product).ToList();
 
-                        foreach(var orderProduct in orderProducts)
+                        foreach (var orderProduct in orderProducts)
                         {
                             result -= decimal.Parse(orderProduct.quantity.ToString());
                         }
@@ -58,7 +58,7 @@ namespace SmallManufacturing.Database
                 }
             }
         }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BillOfMaterials> BillOfMaterials { get; set; }
         public virtual Unit Unit1 { get; set; }

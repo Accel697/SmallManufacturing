@@ -8,7 +8,32 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddEditOrder">
 
-    <Grid>
-        
+    <Grid Background="#FFFFFF">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="250*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="btnAssiqnment" Content="Назначить" Click="btnAssiqnment_Click" Visibility="Collapsed" Margin="10"/>
+
+            <TextBlock Text="Клиент:"/>
+            <ComboBox Name="cbClient" SelectedValue="{Binding client}" SelectedValuePath="id" DisplayMemberPath="fullName"/>
+
+            <TextBlock Text="Дата заказа:"/>
+            <TextBox Name="tbStart" Text="{Binding start_date, StringFormat='dd.mm.yyyy'}"/>
+
+            <TextBlock Text="Дата выполнения заказа:"/>
+            <TextBox Name="tbEnd" Text="{Binding end_date, StringFormat='dd.mm.yyyy'}"/>
+
+            <TextBlock Text="Статус:"/>
+            <ComboBox Name="cbStatus" SelectedValue="{Binding status}" SelectedValuePath="id" DisplayMemberPath="title"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnDelete" Content="Удалить" Click="btnDelete_Click" Visibility="Collapsed" Margin="10"/>
+                <Button x:Name="btnSave" Content="Сохранить" Click="btnSave_Click" Margin="10"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

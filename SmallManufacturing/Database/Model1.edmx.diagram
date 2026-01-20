@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="395284e581594f60886342931010e791" Name="Diagram1">
+        <EntityTypeShape EntityType="manufacturingModel.BillOfMaterials" Width="1.5" PointX="10.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Department" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Employee" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Equipment" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.EquipmentStatus" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Job" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Material" Width="1.5" PointX="8" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.OrderAssignment" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.OrderProduct" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.OrderStatus" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Product" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.ProductionOrder" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Purchase" Width="1.5" PointX="8" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.PurchaseMaterial" Width="1.5" PointX="10.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Supplier" Width="1.5" PointX="5.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="manufacturingModel.Unit" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="manufacturingModel.FK_BillOfMaterials_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_BillOfMaterials_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_Employee_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_Employee_Job" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_OrderAssignment_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_Equipment_EquipmentStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_OrderAssignment_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_Material_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_PurchaseMaterial_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_OrderAssignment_ProductionOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_OrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_OrderProduct_ProductionOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_ProductionOrder_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_Purchase_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="manufacturingModel.FK_PurchaseMaterial_Purchase" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

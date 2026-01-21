@@ -21,10 +21,10 @@
 
         <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
             <TextBlock Text="Сотрудник:"/>
-            <ComboBox Name="cbEmployee" SelectedValuePath="id" DisplayMemberPath="fullName"/>
+            <ComboBox Name="cbEmployee" SelectedValue="{Binding employee}" SelectedValuePath="id" DisplayMemberPath="fullName"/>
 
             <TextBlock Text="Оборудывание:"/>
-            <ComboBox Name="cbEquipment" SelectedValuePath="id" DisplayMemberPath="title"/>
+            <ComboBox Name="cbEquipment" SelectedValue="{Binding equipment}" SelectedValuePath="id" DisplayMemberPath="title"/>
 
             <Button x:Name="btnSave" Content="Добавить" Click="btnSave_Click" Margin="10"/>
         </StackPanel>

@@ -22,8 +22,12 @@ namespace SmallManufacturing.Pages
     /// </summary>
     public partial class AssiqnmentPage : Page
     {
+        OrderAssignment _orderAssignment = new OrderAssignment();
+
         public AssiqnmentPage(ProductionOrder order)
         {
+            _orderAssignment.production_order = order.id;
+
             InitializeComponent();
 
             using (var context = new manufacturingEntities())
@@ -34,9 +38,11 @@ namespace SmallManufacturing.Pages
                 var equipments = context.Equipment.ToList();
                 cbEquipment.ItemsSource = equipments;
 
-                var orderAssiqnments = context.OrderAssignment.Where(oa => oa.production_order == order.id).Include("Employee1").Include("Equipment1").ToList();
+                var orderAssiqnments = context.OrderAssignment.Where(oa => oa.production_order == _orderAssignment.production_order).Include("Employee1").Include("Equipment1").ToList();
                 LVAssiqnment.ItemsSource = orderAssiqnments;
             }
+
+            DataContext = _orderAssignment;
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -60,6 +66,9 @@ namespace SmallManufacturing.Pages
                         context.OrderAssignment.Remove(assiqnmentInDb);
                         context.SaveChanges();
                         MessageBox.Show("Сотрудник успешно снят", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                        LVAssiqnment.ItemsSource = null;
+                        var orderAssiqnments = context.OrderAssignment.Where(oa => oa.production_order == _orderAssignment.production_order).Include("Employee1").Include("Equipment1").ToList();
+                        LVAssiqnment.ItemsSource = orderAssiqnments;
                     }
                 }
                 catch (Exception ex)
@@ -81,13 +90,17 @@ namespace SmallManufacturing.Pages
 
                 try
                 {
-                    OrderAssignment orderAssignment = new OrderAssignment();
+                    if (context.OrderAssignment.FirstOrDefault(oa => oa.production_order == _orderAssignment.production_order && oa.employee == _orderAssignment.employee) != null)
+                    {
+                        MessageBox.Show("Сотрудник уже назначен", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
 
-                    orderAssignment.employee = long.Parse(cbEmployee.SelectedValue.ToString());
-                    orderAssignment.equipment = long.Parse(cbEquipment.SelectedValue.ToString());
-
-                    context.OrderAssignment.Add(orderAssignment);
+                    context.OrderAssignment.Add(_orderAssignment);
                     context.SaveChanges();
+                    LVAssiqnment.ItemsSource = null;
+                    var orderAssiqnments = context.OrderAssignment.Where(oa => oa.production_order == _orderAssignment.production_order).Include("Employee1").Include("Equipment1").ToList();
+                    LVAssiqnment.ItemsSource = orderAssiqnments;
                 }
                 catch (Exception ex)
                 {
